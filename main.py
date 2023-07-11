@@ -35,7 +35,7 @@ async def diagnostico(imagen: UploadFile):
         new_model = load_model(os.path.join('models','imageclassifier.h5'))
         new_model2 = load_model(os.path.join('models','imageclassifierojosano.h5'))
         new_model_cata = load_model(os.path.join('models','imageclassifiercatarata.h5'))
-        new_model_chala = load_model(os.path.join('models','imageclassifierchala.h5'))
+        #new_model_chala = load_model(os.path.join('models','imageclassifierchala.h5'))
         content = await imagen.read()  # Lee el contenido de la imagen
         nparr = np.frombuffer(content, np.uint8)  # Convierte los bytes en un array numpy
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)  # Decodifica la imagen con OpenCV
@@ -43,7 +43,7 @@ async def diagnostico(imagen: UploadFile):
         yhatnew = new_model.predict(np.expand_dims(resize/255, 0))
         yhatnew2 = new_model2.predict(np.expand_dims(resize/255, 0))
         cata = new_model_cata.predict(np.expand_dims(resize/255, 0))
-        chala = new_model_chala.predict(np.expand_dims(resize/255, 0))
+        #chala = new_model_chala.predict(np.expand_dims(resize/255, 0))
         if cata >= 0.97:
          return "La enfermedad es cataratas"
          
