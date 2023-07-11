@@ -1,0 +1,9 @@
+venv/
+__pycache__
+data
+logs_cata
+logs_chala
+logs_nuevo
+logs
+clasificador.py
+pruebas.py
