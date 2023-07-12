@@ -51,6 +51,6 @@ async def diagnostico(imagen: UploadFile):
             return "OJO SANO"
 
         if yhatnew > 0.5: 
-            return "La prediccion es chalazion"
+            return "La enfermedad es chalazion"
     
         return "ENFERMEDAD NO ENCONTRADA"
